@@ -30,7 +30,7 @@ def extract__BFieldOutput( mode=None ):
         if ( research ): break
 
     # ------------------------------------------------- #
-    # --- [3] write Data in outFile                 --- #
+    # --- [3] write Data in outFile :: middle File  --- #
     # ------------------------------------------------- #
 
     lines = lines[(iL+4):]
@@ -43,7 +43,17 @@ def extract__BFieldOutput( mode=None ):
                 break
         print( "[extract__BFieldOutput] output :: {0}".format( outFile ) )
             
+    # ------------------------------------------------- #
+    # --- [4] write Data without index & abs value  --- #
+    # ------------------------------------------------- #
 
+    with open( outFile, "r" ) as f:
+        Data = np.loadtxt( f )
+        
+    import nkUtilities.save__pointFile as spf
+    spf.save__pointFile( outFile=outFile, Data=Data )
+
+        
 # ======================================== #
 # ===  実行部                          === #
 # ======================================== #
