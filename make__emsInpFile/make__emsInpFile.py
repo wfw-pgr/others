@@ -1,4 +1,5 @@
 import os, sys
+import numpy as np
 
 # ========================================================= #
 # === make .inp file for EMSolution execution           === #
