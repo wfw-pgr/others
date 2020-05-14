@@ -23,7 +23,7 @@ def extract__BFieldOutput( mode=None ):
     with open( inpFile, "r" ) as f:
         lines = f.readlines()
 
-    patter = r"B by v_element integration"
+    pattern = r"B by v_element integration"
 
     for iL, line in enumerate( lines ):
         research = re.search( pattern, line )
