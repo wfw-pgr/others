@@ -16,7 +16,7 @@ def make__emsInpFile( mode=None ):
     # ------------------------------------------------- #
 
     targetFile  = "ref/ems_{0}.inp"  .format( mode )
-    coordFile   = "inp/ems_{0}.coord".format( mode )
+    coordFile   = "dat/ems_{0}.coord".format( mode )
 
     with open( targetFile, "r" ) as f:
         contents = f.read()
