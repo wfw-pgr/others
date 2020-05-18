@@ -1,4 +1,4 @@
-import os, sys
+import os, sys, subprocess
 import numpy as np
 
 # ========================================================= #
@@ -13,7 +13,17 @@ def make__emsInpFile( mode=None ):
     if ( mode is None ): sys.exit( "[make__emsInpFile] mode == ???" )
 
     # ------------------------------------------------- #
-    # --- [2] Load File                             --- #
+    # --- [2] copy refference slv input File        --- #
+    # ------------------------------------------------- #
+
+    if ( mode in ["slv"] ):
+        cmd = "cp ref/ems_slv.inp inp/ems_slv.inp"
+        print( cmd )
+        subprocess.call( cmd.split() )
+        return()
+    
+    # ------------------------------------------------- #
+    # --- [3] Load File for post                    --- #
     # ------------------------------------------------- #
 
     targetFile  = "ref/ems_{0}.inp"  .format( mode )
@@ -28,7 +38,7 @@ def make__emsInpFile( mode=None ):
         coord    = f.read()
     
     # ------------------------------------------------- #
-    # --- [3] save File                             --- #
+    # --- [4] save File                             --- #
     # ------------------------------------------------- #
 
     outFile   = "inp/ems_{0}.inp".format( mode )
