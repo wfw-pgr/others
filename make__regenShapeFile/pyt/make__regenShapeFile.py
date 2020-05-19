@@ -74,7 +74,7 @@ def make__regenShapeFile():
     # ------------------------------------------------- #
     import nkUtilities.save__pointFile as spf
     outFile   = "dat/regen_shape.dat"
-    spf.save__pointFile( outFile=outFile, Data=Data, shape=(const["LI"]-1,const["LJ"]-1,6) )
+    spf.save__pointFile( outFile=outFile, Data=Data, shape=(const["LJ"]-1,const["LI"]-1,6) )
 
     # ------------------------------------------------- #
     # --- [6] output figure for check               --- #
