@@ -36,8 +36,8 @@ def make__regenShapeFile():
     phi         = np.arctan2( grid[:,y_], grid[:,x_] ) / np.pi * 180.0
     phi[ np.where( phi < 0.0 ) ] = phi[ np.where( phi < 0.0 ) ] + 360.0
     # -- [2-3] normalized value -- #
-    rhat        = ( radii - const["r1_shm"] ) / ( const["r2_shm"] - const["r1_shm"] )
-    phat        = ( phi   - const["p1_shm"] ) / ( const["p2_shm"] - const["p1_shm"] )
+    rhat        = ( radii - const["regen_r1"] ) / ( const["regen_r2"] - const["regen_r1"] )
+    phat        = ( phi   - const["regen_p1"] ) / ( const["regen_p2"] - const["regen_p1"] )
     # -- [2-4] judge in/out     -- #
     idx         = np.where( ( rhat > 0.0 ) & ( rhat < 1.0 ) & ( phat > 0.0 ) & ( phat < 1.0 ) )
     flags       = np.zeros( (nData) )
