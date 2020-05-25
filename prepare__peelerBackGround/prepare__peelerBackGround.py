@@ -55,4 +55,4 @@ def prepare__peelerBackGround():
 # ========================================================= #
 
 if ( __name__=="__main__" ):
-    make__peelerBackGround()
+    prepare__peelerBackGround()
