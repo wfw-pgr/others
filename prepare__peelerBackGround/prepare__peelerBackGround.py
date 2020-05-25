@@ -53,7 +53,7 @@ def prepare__peelerBackGround():
     # ------------------------------------------------- #
 
     import nkUtilities.cMapTri as cmt
-    pngFile  = "png/ems_peeler.field"
+    pngFile  = "png/ems_peeler.png"
     cmt.cMapTri( xAxis=Data[:,0], yAxis=Data[:,1], cMap=Data[:,5], pngFile=pngFile )
 
     
