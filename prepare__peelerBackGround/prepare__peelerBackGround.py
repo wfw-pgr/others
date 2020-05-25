@@ -48,7 +48,15 @@ def prepare__peelerBackGround():
     import nkUtilities.save__pointFile as spf
     spf.save__pointFile( outFile=outFile, Data=Data )
 
+    # ------------------------------------------------- #
+    # --- [5] draw cMap                             --- #
+    # ------------------------------------------------- #
 
+    import nkUtilities.cMapTri as cmt
+    pngFile  = "png/ems_peeler.field"
+    cmt.cMapTri( xAxis=Data[:,0], yAxis=Data[:,1], cMap=Data[:,5], pngFile=pngFile )
+
+    
     
 # ========================================================= #
 # ===   実行部                                          === #
