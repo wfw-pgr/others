@@ -16,7 +16,7 @@ import nkUtilities.load__pointFile as lpf
 Data  = lpf.load__pointFile( inpFile=inpFile, returnType="structured" )
 wData = Data[:,:,0:3]
 LJ    = wData.shape[0]
-LI    = wData.shape[0]
+LI    = wData.shape[1]
 wData = np.reshape( wData, (1,LJ,LI,3) )
 
 import nkUtilities.save__pointFile as spf
