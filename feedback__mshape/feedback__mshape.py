@@ -13,10 +13,11 @@ inpFile   = "out/mshape_{0:04}.dat".format( num )
 outFile   = "dat/mshape_feedback.dat"
 
 import nkUtilities.load__pointFile as lpf
-Data  = lpf.load__pointFile( inpFile=inpFile, returnType="point" )
-
-wData = Data[:,0:3]
+Data  = lpf.load__pointFile( inpFile=inpFile, returnType="structured" )
+wData = Data[:,:,0:3]
+LJ    = wData.shape[0]
+LI    = wData.shape[0]
+wData = np.reshape( wData, (1,LJ,LI,3) )
 
 import nkUtilities.save__pointFile as spf
-spf.save__pointFile( outFile=outFile, Data=Data )
-
+spf.save__pointFile( outFile=outFile, Data=wData )
