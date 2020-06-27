@@ -24,8 +24,8 @@ def prepare__pole_mcoord():
     # --- [2] File extraction                       --- #
     # ------------------------------------------------- #
 
-    cooFile  = "dat/{0}".format( cooFile )
-    with open( cooFile, "r" ) as f:
+    inpFile  = "dat/{0}".format( FileName )
+    with open( inpFile, "r" ) as f:
         Data = np.loadtxt( f )
 
     outFile  = "dat/ems_pst.coord"
